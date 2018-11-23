@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  
+
   def index
     @students = Student.all
   end
@@ -12,6 +12,9 @@ class StudentsController < ApplicationController
   end
 
   def create
+    @student=Student.find_or_create_by(first_name: params[:first_name], last_name: params[:last_name])
+    redirect_to action: "show", id: "#{@student.id}" #works
+
   end
 
 end
