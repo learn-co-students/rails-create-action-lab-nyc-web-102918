@@ -1,1 +1,21 @@
-<!-- Create your form here -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Student Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>Student Form</h1>
+
+    <%= form_tag('/students') do%>
+        <div><%= text_field_tag :first_name, placeholder: 'first name'%></div>
+        <div><%= text_field_tag :last_name, placeholder: 'last name'%></div>
+        <div><%=submit_tag 'Submit Student'%></div>
+    <%end%>
+
+</body>
+</html>
